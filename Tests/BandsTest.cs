@@ -32,7 +32,19 @@ namespace BandTracker
         {
             // Arragne, act, Assert
             Assert.Equal(firstBand, secondBand);
+        }
+        [Fact]
+        public void Test_SaveToDatabase()
+        {
+            // Arrange
+            firstBand.Save();
 
+            // act
+            List<Band> result = Band.GetAllBands();
+            List<Band> testList = new List<Band>{firstBand};
+
+            // Assert
+            Assert.Equal(testList, result);
         }
     }
 }
