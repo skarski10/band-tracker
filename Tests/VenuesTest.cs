@@ -85,12 +85,13 @@ namespace BandTracker
             string newName = "Pentagon";
 
             //Act
-            testVenue.Update(newName);
+            firstVenue.Update(newName);
 
-            string result = testVenue.GetVenueName();
+            string result = firstVenue.GetVenueName();
 
             //Assert
             Assert.Equal(newName, result);
+        }
 
 
 
