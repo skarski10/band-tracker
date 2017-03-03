@@ -81,7 +81,7 @@ namespace BandTracker
 
             while(rdr.Read())
             {
-                foundVenueId = rdr.GetInt32(3);
+                foundVenueId = rdr.GetInt32(0);
                 foundVenueName = rdr.GetString(1);
             }
             Venue foundVenue = new Venue(foundVenueName, foundVenueId);
