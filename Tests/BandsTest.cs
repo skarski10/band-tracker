@@ -25,7 +25,7 @@ namespace BandTracker
             int result = Band.GetAllBands().Count;
 
             //Assert
-            Assert.Equal(1,result);
+            Assert.Equal(0,result);
         }
     }
 }
