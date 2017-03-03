@@ -27,12 +27,12 @@ namespace BandTracker
             Assert.Equal(0,result);
         }
 
-        [Fact]
-        public void Test_EqualOverrideTrueForSameVenueName()
-        {
-            // Arragne, act, Assert
-            Assert.Equal(firstVenue, secondVenue);
-        }
+        // [Fact]
+        // public void Test_EqualOverrideTrueForSameVenueName()
+        // {
+        //     // Arragne, act, Assert
+        //     Assert.Equal(firstVenue, secondVenue);
+        // }
 
 
         [Fact]

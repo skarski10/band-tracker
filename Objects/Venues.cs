@@ -201,8 +201,7 @@ namespace BandTracker
             else
             {
                 Venue newVenue = (Venue) otherVenue;
-                bool nameEquality = this.GetVenueName()  == newVenue.GetVenueName();
-                // bool idEquality = this.GetVenueId()  == newVenue.GetVenueId();
+                bool nameEquality = this.GetVenueName() == newVenue.GetVenueName();
                 return (nameEquality);
             }
         }

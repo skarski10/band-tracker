@@ -170,7 +170,7 @@ namespace BandTracker
             else
             {
                 Band newBand = (Band) otherBand;
-                bool nameEquality = this.GetBandName()  == newBand.GetBandName();
+                bool nameEquality = this.GetBandName() == newBand.GetBandName();
                 return (nameEquality);
             }
         }
