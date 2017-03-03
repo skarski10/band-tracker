@@ -43,5 +43,40 @@ namespace BandTracker
             }
             return allBands;
         }
+
+
+
+
+        public int GetBandId()
+        {
+            return _id;
+        }
+        public string GetBandName()
+        {
+            return _name;
+        }
+
+        public override bool Equals(System.Object otherBand)
+        {
+            if (!(otherBand is Band))
+            {
+                return false;
+            }
+            else
+            {
+                Band newBand = (Band) otherBand;
+                bool nameEquality = this.GetBandName()  == newBand.GetBandName();
+                return (nameEquality);
+            }
+        }
+
+        public static void DeleteAll()
+        {
+            SqlConnection conn = DB.Connection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM bands;", conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
