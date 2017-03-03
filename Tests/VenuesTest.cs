@@ -50,17 +50,17 @@ namespace BandTracker
             Assert.Equal(testId, result);
         }
 
-        // [Fact]
-        // public void Test_Find_FindsVenueInDatablase()
-        // {
-        //     //Arrange
-        //     firstVenue.Save();
-        //     //Act
-        //     Venue foundVenue = Venue.Find(firstVenue.GetVenueId());
-        //
-        //     //Asswert
-        //     Assert.Equal(firstVenue, foundVenue);
-        // }
+        [Fact]
+        public void Test_Find_FindsVenueInDatablase()
+        {
+            //Arrange
+            firstVenue.Save();
+            //Act
+            Venue foundVenue = Venue.Find(firstVenue.GetVenueId());
+        
+            //Asswert
+            Assert.Equal(firstVenue, foundVenue);
+        }
 
 
 

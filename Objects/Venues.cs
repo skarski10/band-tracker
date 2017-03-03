@@ -66,36 +66,36 @@ namespace BandTracker
             }
         }
 
-        // public static Venue Find(int id)
-        // {
-        //     SqlConnection conn = DB.Connection();
-        //     conn.Open();
-        //
-        //     SqlCommand cmd = new SqlCommand("SELECT * FROM venues WHERE id = @VenueId;", conn);
-        //     SqlParameter VenueIdParameter = new SqlParameter("@VenueId", id.ToString());
-        //     cmd.Parameters.Add(VenueIdParameter);
-        //
-        //     SqlDataReader rdr = cmd.ExecuteReader();
-        //     int foundVenueId = 0;
-        //     string foundVenueName = null;
-        //
-        //     while(rdr.Read())
-        //     {
-        //         foundVenueId = rdr.GetInt32(0);
-        //         foundVenueName = rdr.GetString(1);
-        //     }
-        //     Venue foundVenue = new Venue(foundVenueName, foundVenueId);
-        //
-        //     if(rdr != null)
-        //     {
-        //         rdr.Close();
-        //     }
-        //     if (conn != null)
-        //     {
-        //         conn.Close();
-        //     }
-        //     return foundVenue;
-        // }
+        public static Venue Find(int id)
+        {
+            SqlConnection conn = DB.Connection();
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM venues WHERE id = @VenueId;", conn);
+            SqlParameter VenueIdParameter = new SqlParameter("@VenueId", id.ToString());
+            cmd.Parameters.Add(VenueIdParameter);
+
+            SqlDataReader rdr = cmd.ExecuteReader();
+            int foundVenueId = 0;
+            string foundVenueName = null;
+
+            while(rdr.Read())
+            {
+                foundVenueId = rdr.GetInt32(3);
+                foundVenueName = rdr.GetString(1);
+            }
+            Venue foundVenue = new Venue(foundVenueName, foundVenueId);
+
+            if(rdr != null)
+            {
+                rdr.Close();
+            }
+            if (conn != null)
+            {
+                conn.Close();
+            }
+            return foundVenue;
+        }
 
 
 
