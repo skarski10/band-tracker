@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Content/css/styles.css">
+    <script src="../Content/js/jquery-3.1.1.js" charset="utf-8"></script>
+    <script src="../Content/js/scripts.js" charset="utf-8"></script>
+    <title>Band Tracker</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Band Tracker</h1>
+      </div>
+      <div class="row">
+          <a href="/"><button type="submit" class="btn btn-primary">Home Page</button></a>
+          <a href="/venues"><button type="submit" class="btn btn-info">Venues</button></a>
+          <a href="/bands"><button type="submit" class="btn btn-info">Bands</button></a>
+        </div>
+      <div class="row">
+        @RenderBody()
+      </div>
+    </div>
+  </body>
+</html>
