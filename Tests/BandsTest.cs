@@ -54,7 +54,7 @@ namespace BandTracker
             firstBand.Save();
 
             // Act
-            Band testBand = Band.GetAllBands()[2];
+            Band testBand = Band.GetAllBands()[0];
             int result = firstBand.GetBandId();
             int testId = testBand.GetBandId();
 
