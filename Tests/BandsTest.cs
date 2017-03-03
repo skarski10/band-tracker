@@ -80,8 +80,8 @@ namespace BandTracker
         public void Test_GetVenues_ReturnAllVenuesInBand()
         {
             // Arragne
-            firstVenue.Save();
             firstBand.Save();
+            firstVenue.Save();
 
             // Act
             firstBand.AddVenue(firstVenue);

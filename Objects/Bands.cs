@@ -103,7 +103,7 @@ namespace BandTracker
             SqlConnection conn = DB.Connection();
             conn.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO bands_venues (band_id, venue_id) VALUES (@VenueId, @BandId);", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO bands_venues (venue_id, band_id) VALUES (@VenueId, @BandId);", conn);
             SqlParameter venueIdParameter = new SqlParameter("@VenueId", newVenue.GetVenueId());
             SqlParameter bandIdParameter = new SqlParameter("@BandId", this.GetBandId());
             cmd.Parameters.Add(venueIdParameter);
@@ -118,30 +118,30 @@ namespace BandTracker
 
         public List<Venue> GetVenues()
         {
-            // SqlConnection conn = DB.Connection();
-            // conn.Open();
-            // SqlCommand cmd = new SqlCommand("SELECT venues.* FROM bands JOIN bands_venues ON (bands.id = bands_venues.band_id) JOIN venues ON (bands_venues.venue_id = venues.id) WHERE bands.id = @BandId;", conn);
-            // SqlParameter venueBand = new SqlParameter("@BandId", this.GetBandId().ToString());
-            // cmd.Parameters.Add(venueBand);
-            // SqlDataReader rdr = cmd.ExecuteReader();
+            SqlConnection conn = DB.Connection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT venues.* FROM bands JOIN bands_venues ON (bands.id = bands_venues.band_id) JOIN venues ON (bands_venues.venue_id = venues.id) WHERE bands.id = @BandId;", conn);
+            SqlParameter venueBand = new SqlParameter("@BandId", this.GetBandId().ToString());
+            cmd.Parameters.Add(venueBand);
+            SqlDataReader rdr = cmd.ExecuteReader();
 
             List<Venue> newList = new List<Venue>{};
-            // while(rdr.Read())
-            // {
-            //     int venueId = rdr.GetInt32(0);
-            //     string venueName = rdr.GetString(1);
-            //
-            //     Venue newVenue = new Venue(venueName, venueId);
-            //     newList.Add(newVenue);
-            // }
-            // if(rdr != null)
-            // {
-            //     rdr.Close();
-            // }
-            // if(conn != null)
-            // {
-            //     conn.Close();
-            // }
+            while(rdr.Read())
+            {
+                int venueId = rdr.GetInt32(0);
+                string venueName = rdr.GetString(1);
+
+                Venue newVenue = new Venue(venueName, venueId);
+                newList.Add(newVenue);
+            }
+            if(rdr != null)
+            {
+                rdr.Close();
+            }
+            if(conn != null)
+            {
+                conn.Close();
+            }
              return newList;
         }
 
