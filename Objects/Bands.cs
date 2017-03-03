@@ -82,7 +82,7 @@ namespace BandTracker
 
             while(rdr.Read())
             {
-                foundBandId = rdr.GetInt32(10);
+                foundBandId = rdr.GetInt32(0);
                 foundBandName = rdr.GetString(1);
             }
             Band foundBand = new Band(foundBandName, foundBandId);
