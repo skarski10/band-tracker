@@ -1,0 +1,22 @@
+@{
+  Layout = "Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <h1>@Model["venue"].GetVenueName()</h1>
+</div>
+
+<div class="row">
+    <h3>Here are the bands that have played at @Model["venue"].GetVenueName()!</h3>
+    @foreach (var band in @Model["bands"])
+    {
+        <h3><a href="/bands/@band.GetBandId()/@band.GetBandName()">@band.GetBandName()</a></h3>
+    }
+</div>
+
+<div class="row">
+    <h2>Add a band that has played at @Model["venue"].GetVenueName()</h2>
+    <form class="" action="/" method="post">
+
+    </form>
+</div>

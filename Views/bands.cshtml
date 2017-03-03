@@ -1,3 +1,27 @@
 @{
   Layout = "Shared/_Layout.cshtml";
 }
+
+<div class="row">
+    <h1>Bands</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <ul>
+            @foreach (var band in @Model["band"])
+            {
+                <h3><a href="/bands/@band.GetBandId()/@band.GetBandName()">@band.GetBandName()</a> | <a href="/bands/@band.GetBandId()/edit">Edit</a> | <a href="/bands/@band.GetBandId()/delete">Delete</a></li></h3>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <h2>Add a band:</h2>
+    <form action="/bands" method="post">
+        <label for="band">Enter a new band</label>
+        <input type="text" name="band" id="band" class="form-control" placeholder="Band">
+        <button type="submit" class="btn">Add</button>
+    </form>
+</div>
