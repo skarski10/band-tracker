@@ -42,8 +42,6 @@ namespace BandTracker
                 }
             }
             return allBands;
-
         }
-
     }
 }
