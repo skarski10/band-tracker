@@ -44,21 +44,21 @@ Program will return true if a venues has a unique id and has been saved to an ob
 * **Input:** The Pentagon
 * **Output:** true
 
-Program will return true if the venues item has been found in the database
-* **Input:** The Pentagon
-* **Output:** true
-
 Program will add a band to a venue
 * **Input:** Tiny Rick
 * **Output:** Tiny Rick was added to The Pentagon
 
-Program will return all the band in a venue
+Program will return true if the venues item has been found in the database
 * **Input:** The Pentagon
-* **Output:** all The Pentagon bands
+* **Output:** true
 
 Program will add a venue to a band
 * **Input:** The Pentagon
 * **Output:** The Pentagon was added to Tiny Rick
+
+Program will return all the band in a venue
+* **Input:** The Pentagon
+* **Output:** all The Pentagon bands
 
 Program will return all the venues a band has
 * **Input:** The Pentagon
