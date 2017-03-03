@@ -48,7 +48,7 @@ namespace BandTracker
             SqlConnection conn = DB.Connection();
             conn.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO bands(name) OUTPUT INSERTED.id VALUES (@BandName);", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO bands (name) OUTPUT INSERTED.id VALUES (@BandName);", conn);
             SqlParameter nameParameter = new SqlParameter("@BandName", this.GetBandName());
             cmd.Parameters.Add(nameParameter);
 

@@ -26,7 +26,7 @@ namespace BandTracker
             while(rdr.Read())
             {
                 int venueId = rdr.GetInt32(0);
-                string venueName = rdr.GetName(1);
+                string venueName = rdr.GetString(1);
                 Venue newVenue = new Venue(venueName, venueId);
                 allVenues.Add(newVenue);
             }
@@ -47,7 +47,7 @@ namespace BandTracker
             SqlConnection conn = DB.Connection();
             conn.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO venues(name) OUTPUT INSERTED.id VALUES (@VenueName);", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO venues (name) OUTPUT INSERTED.id VALUES (@VenueName);", conn);
             SqlParameter nameParameter = new SqlParameter("@VenueName", this.GetVenueName());
             cmd.Parameters.Add(nameParameter);
 

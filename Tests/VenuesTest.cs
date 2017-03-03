@@ -27,13 +27,34 @@ namespace BandTracker
             Assert.Equal(0,result);
         }
 
-        // [Fact]
-        // public void Test_EqualOverrideTrueForSameVenueName()
-        // {
-        //     // Arragne, act, Assert
-        //     Assert.Equal(firstVenue, secondVenue);
-        // }
+        [Fact]
+        public void Test_EqualOverrideTrueForSameVenueName()
+        {
+            // Arragne, act, Assert
+            Assert.Equal(firstVenue, secondVenue);
+        }
 
+        [Fact]
+        public void Test_SaveToDatabase()
+        {
+            // Arrange
+            firstVenue.Save();
+
+            // act
+            List<Venue> result = Venue.GetAllVenues();
+            foreach(var venue in result)
+            {
+                Console.WriteLine("result: " + venue.GetVenueName());
+            }
+            List<Venue> testList = new List<Venue>{firstVenue};
+            foreach(var venue in testList)
+            {
+                Console.WriteLine("testList: " + venue.GetVenueName());
+            }
+
+            // Assert
+            Assert.Equal(testList, result);
+        }
 
         [Fact]
         public void Test_SaveAssignsIdToObject()
@@ -103,7 +124,15 @@ namespace BandTracker
             //Act
             firstVenue.Delete();
             List<Venue> resultVenue = Venue.GetAllVenues();
+            foreach(var venue in resultVenue)
+            {
+                Console.WriteLine("resultVenue: " + venue.GetVenueName());
+            }
             List<Venue> testVenueList = new List<Venue> {secondVenue};
+            foreach(var venue in testVenueList)
+            {
+                Console.WriteLine("testVenueList: " + venue.GetVenueName());
+            }
 
 
             //Assert
