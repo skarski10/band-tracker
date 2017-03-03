@@ -27,12 +27,14 @@ namespace BandTracker
             //Assert
             Assert.Equal(0,result);
         }
+
         [Fact]
         public void Test_EqualOverrideTrueForSameBandName()
         {
             // Arragne, act, Assert
             Assert.Equal(firstBand, secondBand);
         }
+
         [Fact]
         public void Test_SaveToDatabase()
         {
