@@ -77,6 +77,20 @@ namespace BandTracker
             // Assert
             Assert.Equal(testList, savedBand);
         }
+        [Fact]
+        public void Test_EditVenueName()
+        {
+            //Arrange
+            firstVenue.Save();
+            string newName = "Pentagon";
+
+            //Act
+            testVenue.Update(newName);
+
+            string result = testVenue.GetVenueName();
+
+            //Assert
+            Assert.Equal(newName, result);
 
 
 
