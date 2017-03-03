@@ -1,4 +1,16 @@
-##Specs
+# Hair Salon
+**C# fourth week Friday code review for Epicodus, 03.03.17**
+### By Kory Skarbek
+## Description
+Write a program to track bands and the venues where they've played concerts. Make a Venue class and a Band class.
+
+* Build full CRUD functionality for Venues. Create, Read (show all, show single), Update, Delete.
+* Allow a user to create Bands that have played at a Venue. Don't worry about building out updating or deleting for bands.
+* There is a many-to-many relationship between bands and concert venues, so a venue can host many bands, and a band can play at many venues. Create a join table to store these relationships.
+* When a user is viewing a single concert venue, list out all of the bands that have played at that venue so far and allow them to add a band to that venue. Create a method to get the bands who have played at a venue, and use a join statement in it.
+* When a user is viewing a single Band, list out all of the Venues that have hosted that band and allow them to add a Venue to that Band. Use a join statement in this method too
+
+## Specs
 
 Check to see if band table database is empty
 * **Input:** ""
@@ -76,3 +88,29 @@ Program will be able to edit single band entries.
 Program will be able to delete single band entries.
 * **Input:** Tiny Rick
 * **Output:** (no entry)
+
+## Setup
+* Open up the terminal.
+* Clone this repository.
+* Compile program
+* Go to localhost:5004
+#### Importing databases with SSMS
+* Open SSMS
+* Select File > Open > File and select your .sql file.
+* If the database does not already exist, add the following lines to the top of the script file
+* CREATE DATABASE band_tracker
+* GO
+* Save the file.
+* Click ! Execute.
+* Verify that the database has been created and the schema and/or data imported.
+
+## Technologies Used
+C#
+Microsoft SQL
+HTML
+CSS
+Bootstrap
+
+## Legal
+Copyright(c) 2017 Kory Skarbek
+This software is licensed under the MIT license.
