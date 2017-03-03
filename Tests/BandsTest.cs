@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace BandTracker
 {
-    public class BandTest
+    public class BandTest : IDisposable
     {
         public static Band firstBand = new Band("Tiny Rick");
         public static Band secondBand = new Band("Tiny Rick");
@@ -45,6 +45,18 @@ namespace BandTracker
 
             // Assert
             Assert.Equal(testList, result);
+        }
+
+
+
+
+
+
+
+        public void Dispose()
+        {
+            Band.DeleteAll();
+            // Venue.DeleteAll();
         }
     }
 }

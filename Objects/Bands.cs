@@ -29,17 +29,16 @@ namespace BandTracker
             {
                 int bandId = rdr.GetInt32(0);
                 string bandName = rdr.GetString(1);
-
                 Band newBand = new Band(bandName, bandId);
                 allBands.Add(newBand);
-                if(rdr != null)
-                {
-                    rdr.Close();
-                }
-                if(conn != null)
-                {
-                    conn.Close();
-                }
+            }
+            if(rdr != null)
+            {
+                rdr.Close();
+            }
+            if(conn != null)
+            {
+                conn.Close();
             }
             return allBands;
         }
