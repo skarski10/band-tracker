@@ -48,18 +48,6 @@ Program will return true if the venues item has been found in the database
 * **Input:** The Pentagon
 * **Output:** true
 
-Program will be able to edit single venues entries.
-* **Input:** Pentagon
-* **Output:** The Pentagon
-
-Program will be able to delete single venues entries.
-* **Input:** The Pentagon
-* **Output:** (no entry)
-
-Check to see if bands_venues table is empty
-* **Input:**
-* **Output:** true
-
 Program will add a band to a venue
 * **Input:** Tiny Rick
 * **Output:** Tiny Rick was added to The Pentagon
@@ -75,6 +63,15 @@ Program will add a venue to a band
 Program will return all the venues a band has
 * **Input:** The Pentagon
 * **Output:** The Pentagon, Tiny Rick
+
+Program will be able to edit single venues entries.
+* **Input:** Pentagon
+* **Output:** The Pentagon
+
+Program will be able to delete single venues entries.
+* **Input:** The Pentagon
+* **Output:** (no entry)
+
 <!--Ice Box-->
 
 Program will be able to edit single band entries.

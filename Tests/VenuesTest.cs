@@ -57,9 +57,25 @@ namespace BandTracker
             firstVenue.Save();
             //Act
             Venue foundVenue = Venue.Find(firstVenue.GetVenueId());
-        
+
             //Asswert
             Assert.Equal(firstVenue, foundVenue);
+        }
+
+        [Fact]
+        public void Test_GetBands_ReturnAllBandsInVenue()
+        {
+            // Arragne
+            firstVenue.Save();
+            firstBand.Save();
+
+            // Act
+            firstVenue.AddBand(firstBand);
+            List<Band> savedBand = firstVenue.GetBands();
+            List<Band> testList = new List<Band> {firstBand};
+
+            // Assert
+            Assert.Equal(testList, savedBand);
         }
 
 

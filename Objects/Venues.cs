@@ -97,6 +97,31 @@ namespace BandTracker
             return foundVenue;
         }
 
+        public void AddBand(Band newBand)
+        {
+            SqlConnection conn = DB.Connection();
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO bands_venues (band_id, venue_id) VALUES (@BandId, @VenueId);", conn);
+            SqlParameter bandIdParameter = new SqlParameter("@BandId", newBand.GetBandId());
+            SqlParameter venueIdParameter = new SqlParameter("@VenueId", this.GetVenueId());
+            cmd.Parameters.Add(bandIdParameter);
+            cmd.Parameters.Add(venueIdParameter);
+
+            cmd.ExecuteNonQuery();
+            if(conn != null)
+            {
+                conn.Close();
+            }
+        }
+
+        public List<Band> GetBands()
+        {
+            List<Band> newList = new List<Band>{};
+
+             return newList;
+        }
+
 
 
 
