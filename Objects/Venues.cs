@@ -151,17 +151,13 @@ namespace BandTracker
 
             SqlCommand cmd = new SqlCommand("UPDATE venues SET name = @NewName OUTPUT INSERTED.name WHERE id = @VenueId;", conn);
 
-            SqlParameter newNameParameter = new SqlParameter();
-            newNameParameter.ParameterName = "@NewName";
-            newNameParameter.Value = newName;
+            SqlParameter newNameParameter = new SqlParameter("@NewName", newName);
             cmd.Parameters.Add(newNameParameter);
 
-            SqlParameter venueIdParameter = new SqlParameter();
-            venueIdParameter.ParameterName = "@VenueId";
-            venueIdParameter.Value = this.GetVenueId();
+            SqlParameter venueIdParameter = new SqlParameter("@VenueId", this.GetVenueId());
             cmd.Parameters.Add(venueIdParameter);
-            SqlDataReader rdr = cmd.ExecuteReader();
 
+            SqlDataReader rdr = cmd.ExecuteReader();
             while(rdr.Read())
             {
                 this._name = rdr.GetString(0);
@@ -176,6 +172,22 @@ namespace BandTracker
                 conn.Close();
             }
         }
+
+        public void Delete()
+       {
+           SqlConnection conn = DB.Connection();
+           conn.Open();
+
+           SqlCommand cmd = new SqlCommand("DELETE FROM venues WHERE id=@VenueId", conn);
+           SqlParameter venueIdParameter = new SqlParameter("@VenueId", this.GetVenueId());
+           cmd.Parameters.Add(venueIdParameter);
+           cmd.ExecuteNonQuery();
+
+           if(conn != null)
+           {
+               conn.Close();
+           }
+       }
 
 
 
