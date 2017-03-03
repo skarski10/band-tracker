@@ -46,11 +46,12 @@ namespace BandTracker
         {
             SqlConnection conn = DB.Connection();
             conn.Open();
+
             SqlCommand cmd = new SqlCommand("INSERT INTO venues(name) OUTPUT INSERTED.id VALUES (@VenueName);", conn);
             SqlParameter nameParameter = new SqlParameter("@VenueName", this.GetVenueName());
+            cmd.Parameters.Add(nameParameter);
 
             SqlDataReader rdr = cmd.ExecuteReader();
-
             while(rdr.Read())
             {
                 this._id = rdr.GetInt32(0);
@@ -64,6 +65,37 @@ namespace BandTracker
                 conn.Close();
             }
         }
+
+        // public static Venue Find(int id)
+        // {
+        //     SqlConnection conn = DB.Connection();
+        //     conn.Open();
+        //
+        //     SqlCommand cmd = new SqlCommand("SELECT * FROM venues WHERE id = @VenueId;", conn);
+        //     SqlParameter VenueIdParameter = new SqlParameter("@VenueId", id.ToString());
+        //     cmd.Parameters.Add(VenueIdParameter);
+        //
+        //     SqlDataReader rdr = cmd.ExecuteReader();
+        //     int foundVenueId = 0;
+        //     string foundVenueName = null;
+        //
+        //     while(rdr.Read())
+        //     {
+        //         foundVenueId = rdr.GetInt32(0);
+        //         foundVenueName = rdr.GetString(1);
+        //     }
+        //     Venue foundVenue = new Venue(foundVenueName, foundVenueId);
+        //
+        //     if(rdr != null)
+        //     {
+        //         rdr.Close();
+        //     }
+        //     if (conn != null)
+        //     {
+        //         conn.Close();
+        //     }
+        //     return foundVenue;
+        // }
 
 
 
@@ -90,7 +122,8 @@ namespace BandTracker
             {
                 Venue newVenue = (Venue) otherVenue;
                 bool nameEquality = this.GetVenueName()  == newVenue.GetVenueName();
-                return (nameEquality);
+                bool idEquality = this.GetVenueId()  == newVenue.GetVenueId();
+                return (nameEquality && nameEquality);
             }
         }
 

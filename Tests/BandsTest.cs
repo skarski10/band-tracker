@@ -10,10 +10,10 @@ namespace BandTracker
     {
         public static Band firstBand = new Band("Tiny Rick");
         public static Band secondBand = new Band("Tiny Rick");
-        // public static Venue firstVenue = new Venue("The Pentagon");
+        public static Venue firstVenue = new Venue("The Pentagon");
 
 
-        public void RecipeTest()
+        public BandTest()
         {
             DBConfiguration.ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=band_tracker_test;Integrated Security=SSPI;";
         }
@@ -84,7 +84,7 @@ namespace BandTracker
         public void Dispose()
         {
             Band.DeleteAll();
-            // Venue.DeleteAll();
+            Venue.DeleteAll();
         }
     }
 }

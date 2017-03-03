@@ -40,10 +40,6 @@ Program recognizes two venues instances as equal if they have the same name
 * **Input:** The Pentagon, The Pentagon
 * **Output:** true
 
-Program will save entries into the venues table
-* **Input:** The Pentagon
-* **Output:** The Pentagon
-
 Program will return true if a venues has a unique id and has been saved to an object
 * **Input:** The Pentagon
 * **Output:** true
