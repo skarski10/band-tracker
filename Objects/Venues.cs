@@ -141,7 +141,7 @@ namespace BandTracker
             {
                 conn.Close();
             }
-             return newList;
+            return newList;
         }
 
         public void Update(string newName)
@@ -174,20 +174,20 @@ namespace BandTracker
         }
 
         public void Delete()
-       {
-           SqlConnection conn = DB.Connection();
-           conn.Open();
+        {
+            SqlConnection conn = DB.Connection();
+            conn.Open();
 
-           SqlCommand cmd = new SqlCommand("DELETE FROM venues WHERE id=@VenueId", conn);
-           SqlParameter venueIdParameter = new SqlParameter("@VenueId", this.GetVenueId());
-           cmd.Parameters.Add(venueIdParameter);
-           cmd.ExecuteNonQuery();
+            SqlCommand cmd = new SqlCommand("DELETE FROM venues WHERE id=@VenueId", conn);
+            SqlParameter venueIdParameter = new SqlParameter("@VenueId", this.GetVenueId());
+            cmd.Parameters.Add(venueIdParameter);
+            cmd.ExecuteNonQuery();
 
-           if(conn != null)
-           {
-               conn.Close();
-           }
-       }
+            if(conn != null)
+            {
+                conn.Close();
+            }
+        }
 
 
 

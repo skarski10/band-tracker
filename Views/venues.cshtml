@@ -4,24 +4,19 @@
 
 <div class="row">
     <h1>Venues</h1>
-</div>
-
-<div class="row">
     <div class="col-md-6">
-        <ul>
-            @foreach (var venue in @Model["venue"])
-            {
-                <h3><a href="/venues/@venue.GetVenueId()/@venue.GetVenueName()">@venue.GetVenueName()</a> | <a href="/venues/@venue.GetVenueId()/edit">Edit</a> | <a href="/venues/@venue.GetVenueId()/delete">Delete</a></li></h3>
-            }
-        </ul>
+        @foreach (var venue in @Model["venue"])
+        {
+            <h3><a href="/venues/@venue.GetVenueId()/@venue.GetVenueName()">@venue.GetVenueName()</a> | <a href="/venues/@venue.GetVenueId()/@venue.GetVenueName()/edit">Edit</a> | <a href="/venue/@venue.GetVenueId()/@venue.GetVenueName()/delete">Delete</a></li></h3>
+        }
     </div>
-</div>
 
-<div class="row">
-    <h2>Add a venue:</h2>
-    <form action="/venues" method="post">
-        <label for="venue">Enter a new venue</label>
-        <input type="text" name="venue" id="venue" class="form-control" placeholder="Venue">
-        <button type="submit" class="btn">Add</button>
-    </form>
+    <div class="col-md-6">
+        <h2>Add a venue:</h2>
+        <form action="/venues" method="post">
+            <label for="venue">Enter a new venue</label>
+            <input type="text" name="venue" id="venue" class="form-control" placeholder="Venue">
+            <button type="submit" class="btn">Add</button>
+        </form>
+    </div>
 </div>

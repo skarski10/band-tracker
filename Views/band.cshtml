@@ -6,7 +6,7 @@
 
 <h3>Here are the venues that @Model["band"].GetBandName() have played at!</h3>
 
-@foreach (var venue in @Model["venues"])
+@foreach (var venue in @Model["band"].GetVenues())
 {
     <h3><a href="/venues/@venue.GetVenueId()/@venue.GetVenueName()">@venue.GetVenueName()</a></h3>
 }

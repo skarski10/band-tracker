@@ -9,9 +9,9 @@
 <div class="row">
     <div class="col-md-6">
         <ul>
-            @foreach (var band in @Model["band"])
+            @foreach (var band in @Model["bands"])
             {
-                <h3><a href="/bands/@band.GetBandId()/@band.GetBandName()">@band.GetBandName()</a> | <a href="/bands/@band.GetBandId()/edit">Edit</a> | <a href="/bands/@band.GetBandId()/delete">Delete</a></li></h3>
+                <h3><a href="/bands/@band.GetBandId()/@band.GetBandName()">@band.GetBandName()</a> | <a href="/band/@band.GetBandId()/delete">Delete</a></h3>
             }
         </ul>
     </div>
@@ -25,3 +25,7 @@
         <button type="submit" class="btn">Add</button>
     </form>
 </div>
+
+
+
+@* | <a href="/bands/@band.GetBandId()/edit">Edit</a> | <a href="/bands/@band.GetBandId()/delete">Delete</a></li></h3> *@
