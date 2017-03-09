@@ -1,4 +1,4 @@
-# Hair Salon
+# Band Tracker
 **C# fourth week Friday code review for Epicodus, 03.03.17**
 ### By Kory Skarbek
 ## Description
