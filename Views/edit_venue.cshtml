@@ -5,9 +5,9 @@
 <h1>Update @Model.GetVenueName():</h1>
 
 <div class="row">
-    <form class="" action="/venues/@Model.GetVenueId()/updated" method="post">
+    <form action="/venue/@Model.GetVenueId()/updated" method="post">
         <input type="hidden" name="_method" value="PATCH">
-        /*<input name="venue" type="hidden" value="@Model.GetVenueId()">*/
+        <input name="venue" type="hidden" value="@Model.GetVenueId()">
         <label for="edit-venue">Edit name</label>
         <input id="edit-venue" name="edit-venue" type="text">
         <button class="btn" type="submit">Edit</button>
