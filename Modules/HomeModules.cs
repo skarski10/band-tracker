@@ -80,7 +80,7 @@ namespace BandTracker
             Patch["/venue/{id}/updated"] = parameters => {
                 Venue selectedVenue = Venue.Find(parameters.id);
                 selectedVenue.Update(Request.Form["edit-venue"]);
-                return View["venue_updated.cshtml"];
+                return View["venue_updated.cshtml", seletedVenue];
             };
 
             // take you to page to delete a venue
